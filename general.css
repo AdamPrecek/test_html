@@ -1,0 +1,314 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+p{
+    background-color: transparent;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    margin: auto;
+    font-family: sans-serif;
+    font-size: 16px;
+    background-color:antiquewhite;
+}
+
+.header { 
+    grid-area: header; 
+    min-height: 50px;
+    overflow: hidden;
+    padding: 10px;
+    background-color:cadetblue;
+}
+
+.header img{
+    float: left;
+}
+
+.header ul{
+    float: left;
+    list-style-type:none;
+    margin-left: 10px;
+}
+
+.menu { grid-area: menu; 
+    display: grid;
+    grid-template-areas: 'menu1 menu1 menu1 menu1 menu1 menu1 menu1';
+}
+.menu a{
+    color:black;
+    margin:2px;
+    text-align: center;
+    border: solid 0px;
+    padding-top: 25px;
+    text-decoration: none;
+    background-color: antiquewhite;
+    transform:scale(1);
+}
+
+.menu a:hover{
+    transition: background-color 0.25s, transform 0.25s, color 0.25s;
+    color:antiquewhite;
+    border-radius: 0px;
+    background-color: black;
+    transform:scale(1.07);
+    z-index: 9;
+}
+
+.main { grid-area: main; 
+    background-color: white;
+    padding: 20px;
+    flex-wrap: wrap;
+
+}
+
+.main h1{
+    text-align: center;
+}
+
+.main img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.main p{
+    text-align: center;
+    width:50%;
+    min-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.right { grid-area: right; 
+    background-color: white;
+
+    border: solid 0px;
+}
+.right img{
+
+    width: 80%;
+    height: auto;
+    padding: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.right ul{
+    list-style-type:none;
+}
+.right ul li{
+
+}
+.formularbox{
+    width:300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.formularbox p{
+    text-align: center;
+    padding: 10px;
+}
+.formularbox ul{
+    list-style-type:none;
+    margin: 5px;
+    height: fit-content;
+}
+.formularbox ul li{
+    padding: 10px;
+}
+.formularbox h1{
+    font-family: Tahoma, sans-serif;
+    font-size: 12px;
+    font-weight:bold;
+    color: darkgrey;
+    text-align: center;
+}
+.formular{
+    margin-left: auto;
+    margin-right: auto;
+    /* width:300px; */
+    height: 300px;
+    padding: 15px;
+    padding-left: 50px;
+    background-image:url("img/box.gif") ;
+    background-repeat: no-repeat;
+    background-size: auto inherit;
+    background-color: white;
+    background-position: center;
+    font-size: 12px;
+    position: relative;
+}
+.formular img{
+    position: absolute;
+    top:30px;
+    left: 150px;
+    z-index: 1;
+    width:50px;
+    height: auto;
+}
+video{
+    width: auto;
+    height: 100%;
+}
+.boximg{
+    position: absolute;
+    top:0px;
+    left: 150px;
+    height: 51px;
+    width: 87px;    
+}
+
+.formular a{
+    text-decoration: none;
+    color: rgb(204, 0, 51);
+}
+.formular a:hover{
+    text-decoration: underline;
+}
+
+.formular a:visited{
+    color: rgb(204, 0, 51) ;
+}
+
+.footer { 
+    grid-area: footer; 
+    text-align: center;
+    background-color: darkslategray;
+    color: azure;
+    display: grid;
+    grid-template-areas: 'text video';
+    grid-template-columns: auto 200px;
+}
+
+.footer-video{
+    grid-area: video;
+    border: solid 0px;
+    float: right;
+    height: 80px;
+    width: auto;
+}
+
+.footer-text{
+    grid-area: text;
+    padding-top: 10px;
+}
+.grid-container {
+    width: 80%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: auto 15%;
+    grid-template-rows: 15% 10% auto 15%;
+    grid-template-areas:
+      'header header'
+      'menu menu'
+      'main right'
+      'footer footer';
+    gap: 0px;
+    background-color:transparent;
+    padding: 10px;
+    border: solid 0px;
+
+  }
+  fieldset{
+      border:0px solid;
+  }
+  .airplane{
+      /* grid-area: airplane; */
+      border: solid 0px;
+      background-color: transparent;
+  }
+  .gridbox {
+    width: 50%;
+    height: 80%;
+    background-image: url("img/ctyrka.jpg"); 
+    background-size: 100%;
+    /* background-size: cover; */
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+      'airplane airplane'
+      'airplane airplane';
+    gap: 0px; 
+    padding: 0px;
+    border: solid 0px;
+  }
+  .gridbox a{
+      background-color: transparent;
+  }
+
+  @media (max-width: 750px) {
+    body{
+        width: 100vh;
+        height: 100%;
+    }
+    .grid-container {
+        width: 100vh;
+        height: auto;
+        grid-template-columns: 100vh;
+        grid-template-rows: 100px auto auto auto;
+        grid-template-areas:
+        'header'
+        'menu'
+        'right'
+        'main'
+        'footer';
+    }
+    .right img{
+
+        width: 25%;
+        height: auto;
+        padding: 5px;
+        display: inline;
+        float: left;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+    @media (max-width: 500px){
+    .gridbox{
+        grid-template-columns: 100%;
+        /* grid-template-rows: 100%; */
+        grid-template-areas:
+          'airplane' 
+          'airplane'
+          'airplane' 
+          'airplane';
+    }
+    .right img{
+
+        width: 100%;
+        height: auto;
+        padding: 5px;
+        display: block;
+        float: left;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .footer { 
+        grid-area: footer; 
+        text-align: center;
+        background-color: darkslategray;
+        color: azure;
+        display: grid;
+        grid-template-areas: 
+        'text' 
+        'video';
+        grid-template-rows: auto auto;
+    }
+    .menu { grid-area: menu; 
+        display: grid;
+        grid-template-areas: 'menu1''menu1''menu1''menu1''menu1''menu1''menu1';
+        font-size: 2em;
+    }
+  }
